@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.TopicFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/typography_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_toolbar"
+            android:paddingHorizontal="@dimen/small_125">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/standard_icon_width_height"
+                android:layout_height="@dimen/standard_icon_width_height"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_ripple_effect"
+                android:padding="@dimen/small_125"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/normal_100"
+                android:fontFamily="@font/font_mont_semi_bold"
+                android:text="Alphabet"
+                android:textColor="@color/typography_primary"
+                android:textSize="@dimen/medium_size_text" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/toolbar_shadow" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="@dimen/normal_100"
+        android:layout_marginTop="@dimen/normal_100"
+        android:padding="0dp"
+        app:cardCornerRadius="@dimen/normal_100">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pic_alphabet2"
+                android:tint="#66000000" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_go_to_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_100"
+                android:backgroundTint="@color/white"
+                android:drawableEnd="@drawable/ic_next"
+                android:fontFamily="@font/font_mont_medium"
+                android:padding="@dimen/small_150"
+                android:text="Пройти викторину"
+                android:textAllCaps="false"
+                android:textColor="@color/typography_primary"
+                android:textSize="@dimen/normal_text_100"
+                app:cornerRadius="@dimen/normal_100"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:rippleColor="@color/typography_tertiary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/normal_100"
+        android:layout_marginTop="@dimen/normal_100"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_element" />
+
+</LinearLayout>

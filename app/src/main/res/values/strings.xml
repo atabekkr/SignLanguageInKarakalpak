@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Karakalpak Sign language</string>
+    <string name="alphabet_gif">Алфавит(gif)</string>
+    <string name="alphabet_photo">Алфавит(фото)</string>
+    <string name="introducing">Знакомство</string>
+    <string name="human">Человек</string>
+    <string name="digits">Числа</string>
+    <string name="config">Конфигурация</string>
+    <string name="family">Семья</string>
+    <string name="favourites">Избранные</string>
+</resources>

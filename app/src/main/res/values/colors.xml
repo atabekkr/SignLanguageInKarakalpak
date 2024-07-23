@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="shadowColor">#33423f3f</color>
+
+    <!--    Brand colors -->
+    <color name="brand_color_1">#2A324B</color>
+    <color name="brand_color_2">#767B91</color>
+    <color name="brand_color_3">#C7CCDB</color>
+    <color name="brand_color_4">#E1E5EE</color>
+
+    <!--    Brand colors lighter    -->
+    <color name="brand_color_lighter_1">#689C56</color>
+    <color name="brand_color_lighter_2">#E7E8DE</color>
+    <color name="brand_color_lighter_3">#FFFEFA</color>
+
+    <!--    Accent colors   -->
+    <color name="accent_color_1">#F7C59F</color>
+
+    <!--    Additional  -->
+    <color name="additional_color_1">#D84B4B</color>
+    <color name="additional_color_2">#EF6D6D</color>
+    <color name="additional_color_3">#6EC085</color>
+
+    <!--    Gray    -->
+    <color name="dark_grey">#C2C2C2</color>
+    <color name="medium_grey">#E6E6E6</color>
+    <color name="light_grey">#FAFAFA</color>
+
+    <!--    Typography  -->
+    <color name="typography_primary">#303030</color>
+    <color name="typography_secondary">#575757</color>
+    <color name="typography_tertiary">#909298</color>
+    <color name="typography_light">#FFFFFF</color>
+
+    <!--    status color    -->
+    <color name="status_color">#F5F5F5</color>
+
+    <color name="transparent">#0000</color>
+</resources>
