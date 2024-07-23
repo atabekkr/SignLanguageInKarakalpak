@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.safeargs.kotlin)
     alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.dagger)
 }
 
 android {
@@ -59,7 +60,11 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
-    //reflection-free flavor kirich
+    //reflection-free flavor by kirich
     implementation(libs.viewbinding.kirich)
+
+    //dagger-hilt
+    implementation(libs.dagger)
+    ksp(libs.dagger.compiler)
 
 }

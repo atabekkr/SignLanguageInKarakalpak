@@ -7,7 +7,9 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.shaxsanem.signlanguage.R
 import com.shaxsanem.signlanguage.databinding.FragmentQuizBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class QuizFragment: Fragment(R.layout.fragment_quiz) {
 
     private val binding by viewBinding(FragmentQuizBinding::bind)
