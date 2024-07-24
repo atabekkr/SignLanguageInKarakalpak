@@ -27,7 +27,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         binding.cardAlphabet.setOnClickListener {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToTopicFragment()
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment("number")
             )
         }
 

@@ -30,10 +30,29 @@
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="groupName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_topicFragment_to_wordOverviewFragment"
+            app:destination="@id/wordOverviewFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
         android:name="com.shaxsanem.signlanguage.ui.QuizFragment"
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/wordOverviewFragment"
+        android:name="com.shaxsanem.signlanguage.ui.WordOverviewFragment"
+        android:label="fragment_word_overview"
+        tools:layout="@layout/fragment_word_overview" >
+        <argument
+            android:name="content"
+            app:argType="string" />
+    </fragment>
 </navigation>

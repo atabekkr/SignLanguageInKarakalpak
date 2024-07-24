@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.WordOverviewFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/typography_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_toolbar"
+            android:paddingHorizontal="@dimen/small_125">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/standard_icon_width_height"
+                android:layout_height="@dimen/standard_icon_width_height"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_ripple_effect"
+                android:padding="@dimen/small_125"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/normal_100"
+                android:fontFamily="@font/font_mont_semi_bold"
+                android:text="@string/obzor"
+                android:textColor="@color/typography_primary"
+                android:textSize="@dimen/medium_size_text" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/toolbar_shadow" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/large_200"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/large_100"
+            android:background="@drawable/bg_video">
+
+            <TextureView
+                android:id="@+id/texture_view"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/small_75" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_mont_bold"
+            android:textAlignment="center"
+            android:textColor="@color/typography_primary"
+            android:textSize="@dimen/medium_size_text"
+            tools:text="Bas barmaq" />
+
+        <LinearLayout
+            android:id="@+id/btn_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_200"
+            android:background="@drawable/bg_start_lesson"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="@dimen/standard_icon_width_height"
+                android:layout_height="@dimen/standard_icon_width_height"
+                android:padding="@dimen/small_100"
+                android:src="@drawable/ic_outlined_start" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

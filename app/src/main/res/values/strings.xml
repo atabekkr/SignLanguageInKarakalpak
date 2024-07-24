@@ -8,4 +8,7 @@
     <string name="config">Конфигурация</string>
     <string name="family">Семья</string>
     <string name="favourites">Избранные</string>
+    <string name="search">Search</string>
+    <string name="obzor">Obzor</string>
+    <string name="add_to_fav">Добавить в избранное</string>
 </resources>
