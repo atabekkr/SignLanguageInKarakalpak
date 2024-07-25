@@ -23,11 +23,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun setupListeners() {
 
-        binding.ivInfo.setOnClickListener {  }
+        binding.ivInfo.setOnClickListener { }
 
         binding.cardAlphabet.setOnClickListener {
             findNavController().navigate(
                 HomeFragmentDirections.actionHomeFragmentToTopicFragment("number")
+            )
+        }
+
+        binding.cardFavourite.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_homeFragment_to_favouritesFragment
             )
         }
 

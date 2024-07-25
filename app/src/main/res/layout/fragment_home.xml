@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/typography_light"
-    android:clipChildren="false"
-    android:clipToPadding="false"
     android:orientation="vertical"
     tools:context=".ui.HomeFragment">
 
@@ -268,9 +266,11 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_favourite"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
+            android:background="?attr/selectableItemBackground"
             android:layout_weight="1"
             app:cardCornerRadius="12dp"
             app:strokeWidth="0dp">

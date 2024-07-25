@@ -9,6 +9,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import java.io.FileOutputStream
 import javax.inject.Singleton
 
 @Module
@@ -18,8 +19,15 @@ class DataModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): SignLanguageDb {
-        return Room.databaseBuilder(context, SignLanguageDb::class.java, "sign_language.db")
-            .createFromAsset("sign_language.db")
+        val dbFile = context.getDatabasePath("sign_language.db")
+        if (!dbFile.exists()) {
+            context.assets.open("sign_language.db").use { inputStream ->
+                FileOutputStream(dbFile).use { outputStream ->
+                    inputStream.copyTo(outputStream)
+                }
+            }
+        }
+        return Room.databaseBuilder(context.applicationContext, SignLanguageDb::class.java, "sign_language.db")
             .fallbackToDestructiveMigration()
             .build()
     }

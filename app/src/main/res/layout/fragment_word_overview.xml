@@ -59,7 +59,7 @@
             android:layout_marginBottom="@dimen/large_100"
             android:background="@drawable/bg_video">
 
-            <TextureView
+            <VideoView
                 android:id="@+id/texture_view"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
