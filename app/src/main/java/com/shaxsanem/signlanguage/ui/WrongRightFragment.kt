@@ -106,6 +106,7 @@ class WrongRightFragment : Fragment(R.layout.fragment_wrong_right) {
         binding.videoView.setMediaController(null)
         binding.videoView.setOnPreparedListener {
             it.isLooping = true
+            it.setVolume(0f, 0f)
         }
         binding.videoView.isSoundEffectsEnabled = false
         binding.videoView.start()

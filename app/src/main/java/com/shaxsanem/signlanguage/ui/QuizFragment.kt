@@ -11,7 +11,7 @@ import com.shaxsanem.signlanguage.databinding.FragmentQuizBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class QuizFragment: Fragment(R.layout.fragment_quiz) {
+class QuizFragment : Fragment(R.layout.fragment_quiz) {
 
     private val binding by viewBinding(FragmentQuizBinding::bind)
     private val navArgs by navArgs<QuizFragmentArgs>()
@@ -26,6 +26,11 @@ class QuizFragment: Fragment(R.layout.fragment_quiz) {
 
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
+        binding.cardBySign.setOnClickListener {
+            findNavController().navigate(
+                QuizFragmentDirections.actionQuizFragmentToQuizBySignFragment()
+            )
+        }
         binding.cardWrongRight.setOnClickListener {
             findNavController().navigate(
                 QuizFragmentDirections.actionQuizFragmentToWrongRightFragment(navArgs.groupName)

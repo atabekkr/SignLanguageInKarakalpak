@@ -39,4 +39,8 @@
 
     <color name="transparent">#0000</color>
     <color name="bg_progress">#DDFBD3</color>
+
+    <color name="color_option_selected">#F4B962</color>
+    <color name="color_error">#F44336</color>
+    <color name="color_right">#4CAF50</color>
 </resources>

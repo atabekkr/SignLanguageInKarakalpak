@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.WrongRightFragment">
+    tools:context=".ui.QuizBySignFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -64,7 +64,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/large_200"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -84,49 +83,76 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/font_mont_bold"
-            android:textAlignment="center"
-            android:textColor="@color/typography_primary"
-            android:textSize="@dimen/medium_size_text"
-            tools:text="Bas barmaq" />
-
         <LinearLayout
-            android:id="@+id/btn_true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/normal_200"
-            android:layout_marginTop="@dimen/normal_200"
-            android:background="@drawable/bg_ripple_option"
-            android:gravity="center">
+            android:layout_marginBottom="@dimen/normal_100"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/large_100">
 
-            <ImageView
-                android:layout_width="@dimen/standard_icon_width_height"
-                android:layout_height="@dimen/standard_icon_width_height"
-                android:padding="@dimen/small_100"
-                android:src="@drawable/ic_true" />
+            <Button
+                android:id="@+id/btn_variant1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_mont_medium"
+                android:text="Вариант 1"
+                android:textAllCaps="false"
+                android:textColor="@color/typography_secondary"
+                app:rippleColor="@color/brand_color_2" />
+
+            <Button
+                android:id="@+id/btn_variant2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/normal_100"
+                android:fontFamily="@font/font_mont_medium"
+                android:text="Вариант 2"
+                android:textAllCaps="false"
+                android:textColor="@color/typography_secondary"
+                app:rippleColor="@color/brand_color_2" />
+
+            <Button
+                android:id="@+id/btn_variant3"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/normal_100"
+                android:fontFamily="@font/font_mont_medium"
+                android:text="Вариант 3"
+                android:textAllCaps="false"
+                android:textColor="@color/typography_secondary"
+                app:rippleColor="@color/brand_color_2" />
+
+            <Button
+                android:id="@+id/btn_variant4"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/normal_100"
+                android:fontFamily="@font/font_mont_medium"
+                android:text="Вариант 4"
+                android:textAllCaps="false"
+                android:textColor="@color/typography_secondary"
+                app:rippleColor="@color/brand_color_2" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/btn_false"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_check"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/normal_200"
-            android:layout_marginTop="@dimen/normal_100"
-            android:background="@drawable/bg_ripple_option"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="@dimen/standard_icon_width_height"
-                android:layout_height="@dimen/standard_icon_width_height"
-                android:padding="@dimen/small_100"
-                android:src="@drawable/ic_false" />
-
-        </LinearLayout>
+            android:layout_marginHorizontal="@dimen/normal_100"
+            android:backgroundTint="@color/brand_color_lighter_1"
+            android:fontFamily="@font/font_mont_medium"
+            android:text="@string/check"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/small_150"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:rippleColor="@color/brand_color_2" />
 
     </LinearLayout>
 

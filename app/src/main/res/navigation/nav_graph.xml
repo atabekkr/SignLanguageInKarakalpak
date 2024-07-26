@@ -63,6 +63,9 @@
         <argument
             android:name="groupName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_quizFragment_to_quizBySignFragment"
+            app:destination="@id/quizBySignFragment" />
     </fragment>
     <fragment
         android:id="@+id/wordOverviewFragment"
@@ -111,5 +114,14 @@
             android:id="@+id/action_resultFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:popUpTo="@id/nav_graph.xml" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizBySignFragment"
+        android:name="com.shaxsanem.signlanguage.ui.QuizBySignFragment"
+        android:label="fragment_quiz_by_sign"
+        tools:layout="@layout/fragment_quiz_by_sign" >
+        <action
+            android:id="@+id/action_quizBySignFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
     </fragment>
 </navigation>

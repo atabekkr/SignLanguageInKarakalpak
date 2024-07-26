@@ -15,4 +15,9 @@
     <string name="test_done">Тест завершен</string>
     <string name="result_in_percent">Ваша точность %s в этом тесте.</string>
     <string name="retry">Повторить попытку</string>
+    <string name="check">Проверить</string>
+    <string name="your_result">Sizdıń nátiyjeńiz</string>
+    <string name="procced">Продолжить</string>
+    <string name="right">Правильно</string>
+    <string name="wrong">Неправильно</string>
 </resources>
