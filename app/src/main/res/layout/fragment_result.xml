@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ResultFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/congrats" />
+
+    <TextView
+        android:id="@+id/tv_test_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_100"
+        android:fontFamily="@font/font_mont_semi_bold"
+        android:text="@string/test_done"
+        android:textColor="@color/black"
+        android:textSize="@dimen/normal_text_150"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/animationView" />
+
+    <TextView
+        android:id="@+id/tv_result_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/large_200"
+        android:layout_marginTop="@dimen/normal_100"
+        android:fontFamily="@font/font_mont_medium"
+        android:text="@string/result_in_percent"
+        android:textColor="@color/typography_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_test_done" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_retry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/large_100"
+        android:layout_marginTop="@dimen/large_100"
+        android:backgroundTint="@color/brand_color_lighter_1"
+        android:fontFamily="@font/font_mont_medium"
+        android:text="@string/retry"
+        app:cornerRadius="@dimen/small_100"
+        app:layout_constraintTop_toBottomOf="@id/tv_result_percent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_go_home"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/large_100"
+        android:layout_marginTop="@dimen/normal_100"
+        android:fontFamily="@font/font_mont_medium"
+        android:text="Главное меню"
+        android:textColor="@color/brand_color_lighter_1"
+        app:cornerRadius="@dimen/small_100"
+        app:layout_constraintTop_toBottomOf="@id/btn_retry"
+        app:strokeColor="@color/brand_color_lighter_1"
+        app:strokeWidth="2dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

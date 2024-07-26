@@ -199,10 +199,12 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_wrong_right"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/normal_100"
         android:backgroundTint="@color/white"
+        android:background="@drawable/btn_ripple_effect"
         app:cardCornerRadius="@dimen/small_125"
         app:cardElevation="@dimen/small_100">
 
@@ -228,7 +230,7 @@
                 android:layout_marginStart="@dimen/normal_100"
                 android:layout_marginEnd="@dimen/small_100"
                 android:fontFamily="@font/font_mont_semi_bold"
-                android:text="Дурыс кате"
+                android:text="@string/wrong_right"
                 android:textColor="@color/typography_primary"
                 android:textSize="@dimen/normal_text_100"
                 app:layout_constraintBottom_toBottomOf="@id/iv_rec_3"

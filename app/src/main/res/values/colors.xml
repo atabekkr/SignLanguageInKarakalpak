@@ -38,4 +38,5 @@
     <color name="status_color">#F5F5F5</color>
 
     <color name="transparent">#0000</color>
+    <color name="bg_progress">#DDFBD3</color>
 </resources>

@@ -27,9 +27,40 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         binding.cardAlphabet.setOnClickListener {
             findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment("alphabet")
+            )
+        }
+        binding.cardAlphabetPhoto.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment("alphabetPhoto")
+            )
+        }
+        binding.cardIntroducing.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment("intro")
+            )
+        }
+        binding.cardHuman.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment("human")
+            )
+        }
+        binding.cardNumber.setOnClickListener {
+            findNavController().navigate(
                 HomeFragmentDirections.actionHomeFragmentToTopicFragment("number")
             )
         }
+        binding.cardConfig.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment("config")
+            )
+        }
+        binding.cardFamily.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment("family")
+            )
+        }
+
 
         binding.cardFavourite.setOnClickListener {
             findNavController().navigate(

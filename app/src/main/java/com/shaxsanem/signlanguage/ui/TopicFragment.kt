@@ -1,6 +1,5 @@
 package com.shaxsanem.signlanguage.ui
 
-import android.adservices.topics.Topic
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
@@ -41,6 +40,36 @@ class TopicFragment : Fragment(R.layout.fragment_topic) {
 
         binding.recyclerView.adapter = adapter
 
+        when (navArgs.groupName) {
+            "alphabet" -> {
+                binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_alphabet2))
+            }
+
+            "alphabetPhoto" -> {
+                binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_alphabet))
+            }
+
+            "intro" -> {
+                binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_introduce))
+            }
+
+            "human" -> {
+                binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_human2))
+            }
+
+            "number" -> {
+                binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_numbers))
+            }
+
+            "config" -> {
+                binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_config))
+            }
+
+            "family" -> {
+                binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_family))
+            }
+        }
+
     }
 
     private fun loadData() {
@@ -57,7 +86,7 @@ class TopicFragment : Fragment(R.layout.fragment_topic) {
 
         binding.btnGoToQuiz.setOnClickListener {
             findNavController().navigate(
-                TopicFragmentDirections.actionTopicFragmentToQuizFragment()
+                TopicFragmentDirections.actionTopicFragmentToQuizFragment(navArgs.groupName)
             )
         }
 

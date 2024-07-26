@@ -52,7 +52,18 @@
         android:id="@+id/quizFragment"
         android:name="com.shaxsanem.signlanguage.ui.QuizFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_wrongRightFragment"
+            app:destination="@id/wrongRightFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="groupName"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/wordOverviewFragment"
         android:name="com.shaxsanem.signlanguage.ui.WordOverviewFragment"
@@ -70,5 +81,35 @@
         <action
             android:id="@+id/action_favouritesFragment_to_wordOverviewFragment"
             app:destination="@id/wordOverviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wrongRightFragment"
+        android:name="com.shaxsanem.signlanguage.ui.WrongRightFragment"
+        android:label="fragment_wrong_right"
+        tools:layout="@layout/fragment_wrong_right" >
+        <argument
+            android:name="groupName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_wrongRightFragment_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:popUpTo="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.shaxsanem.signlanguage.ui.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <argument
+            android:name="result"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_resultFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph.xml" />
     </fragment>
 </navigation>

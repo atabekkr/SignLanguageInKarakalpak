@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.WrongRightFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="@dimen/standard_icon_width_height"
+            android:layout_height="@dimen/standard_icon_width_height"
+            android:layout_margin="@dimen/small_100"
+            android:padding="@dimen/small_150"
+            android:src="@drawable/ic_clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/small_100"
+            android:progressDrawable="@drawable/custom_progress"
+            app:layout_constraintBottom_toBottomOf="@id/iv_cancel"
+            app:layout_constraintEnd_toStartOf="@id/iv_time"
+            app:layout_constraintStart_toEndOf="@id/iv_cancel"
+            app:layout_constraintTop_toTopOf="@id/iv_cancel" />
+
+        <ImageView
+            android:id="@+id/iv_infinity"
+            android:layout_width="@dimen/normal_150"
+            android:layout_height="@dimen/normal_150"
+            android:layout_marginEnd="@dimen/normal_125"
+            android:src="@drawable/ic_infinity"
+            app:layout_constraintBottom_toBottomOf="@id/iv_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_cancel" />
+
+        <ImageView
+            android:id="@+id/iv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/small_100"
+            android:src="@drawable/ic_time"
+            app:layout_constraintBottom_toBottomOf="@id/iv_infinity"
+            app:layout_constraintEnd_toStartOf="@id/iv_infinity"
+            app:layout_constraintTop_toTopOf="@id/iv_infinity"
+            app:tint="@color/brand_color_lighter_1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/large_200"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/large_100"
+            android:background="@drawable/bg_video">
+
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/small_75" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_mont_bold"
+            android:textAlignment="center"
+            android:textColor="@color/typography_primary"
+            android:textSize="@dimen/medium_size_text"
+            tools:text="Bas barmaq" />
+
+        <LinearLayout
+            android:id="@+id/btn_true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/normal_200"
+            android:layout_marginTop="@dimen/normal_200"
+            android:background="@drawable/bg_start_lesson"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/standard_icon_width_height"
+                android:layout_height="@dimen/standard_icon_width_height"
+                android:padding="@dimen/small_100"
+                android:src="@drawable/ic_true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/normal_200"
+            android:layout_marginTop="@dimen/normal_100"
+            android:background="@drawable/bg_ripple_option"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/standard_icon_width_height"
+                android:layout_height="@dimen/standard_icon_width_height"
+                android:padding="@dimen/small_100"
+                android:src="@drawable/ic_false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
