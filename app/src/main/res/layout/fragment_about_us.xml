@@ -43,10 +43,12 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
+        android:id="@+id/tv_about_us"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/normal_100"
         android:fontFamily="@font/font_mont_medium"
         android:text="@string/about_us_text"
+        android:scrollbars="vertical"
         android:textSize="@dimen/normal_text_100" />
 </LinearLayout>

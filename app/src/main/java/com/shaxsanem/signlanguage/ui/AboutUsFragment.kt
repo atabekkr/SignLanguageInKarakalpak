@@ -1,6 +1,7 @@
 package com.shaxsanem.signlanguage.ui
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -19,6 +20,7 @@ class AboutUsFragment: Fragment(R.layout.fragment_about_us) {
 
         binding.btnBack.setOnClickListener { findNavController().popBackStack() }
 
+        binding.tvAboutUs.movementMethod = ScrollingMovementMethod()
     }
 
 }

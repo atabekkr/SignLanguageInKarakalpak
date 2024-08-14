@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Karakalpak Sign language</string>
+    <string name="app_name">Qaraqalpaq Sign Language</string>
     <string name="alphabet_gif">Álipbe (video)</string>
     <string name="alphabet_photo">Álipbe (súwret)</string>
     <string name="introducing">Tanısıw</string>
@@ -22,5 +22,24 @@
     <string name="wrong">Qáte</string>
     <string name="start_quiz">Victorinanı baslaw</string>
     <string name="aboutus">Bizler haqqımızda</string>
-    <string name="about_us_text">Welcome to [Your Company Name], where innovation meets excellence. We are a dedicated team of professionals committed to delivering top-notch products and services that empower our customers to achieve their goals. With a strong focus on quality, integrity, and customer satisfaction, we strive to build lasting relationships and create value in everything we do. Founded in [Year], [Your Company Name] has grown from a small startup to a trusted leader in the [Industry] industry. Our passion for continuous improvement drives us to stay ahead of the curve, embracing the latest technologies and trends to ensure we provide the best solutions for our clients. At [Your Company Name], we believe in the power of collaboration and are proud to work with a diverse range of clients from various industries. Whether you\'re a small business or a large enterprise, we are here to help you navigate the complexities of your market and achieve success. Join us on our journey to excellence. Together, we can make a difference.</string>
+
+    <string name="about_us_text">\"Qaraqalpaq Sign Language\" qosımshasın jaratıwda járdem bergen
+        bárshege shın júrekten minnetdarshılıǵımızdı bildiremiz. Bul joybardı kóplegen ájayıp
+        insanlar hám shólkemlerdiń járdemi hám qatnasıwisiz ámelge asırıw múmkin emes edi.
+        \n4 mektep-internat direktorı hám oqıtıwshıları:\nSiziń qatnasıwıńız hám qollap-quwatlawıńız bahasız edi. Qosımshanı jaqsılawǵa járdem bergen
+        derekler hám máslahátlar ushın minnetdarshılıq bildiremiz. Siziń tálimge bolǵan sadıqlıǵıńız
+        hám balalarǵa ǵamxorlıǵıńız bizdi keyingi jetiskenliklerge ilxamlandıradı.
+        \nBiziń shańaraqlarımız hám doslarımız:\n
+        Sabırlıǵıńız, túsiniwińiz hám turaqlı qollap-quwatlawıńız ushın minnetdarmız. Sizdń
+        máslahátlarıńız hám bizge bolǵan isenimińiz barlıq qıyınshılıqlardı jeńiwge hám joybardı
+        juwmaqlawǵa járdem berdi.
+        \nSherikler hám qáwenderler:\n
+        Biz sheriklerimiz hám qáwenderlerimizge finanslıq járdem hám usınıs etilgen resurslar ushın
+        tereń minnetdarshılıq bildiremiz. Siziń járdeminizsiz bul joybardı ámelge asırıw múmkin emes
+        edi.\n
+        "Qaraqalpaq Sign Language" ni jaratılıwma úles qosqan hár bir adamǵa shın júrekten
+        minnetdarshılıq bildiremiz. Birgelikte biz esitiw qábiletinde nuqsanı bar adamlardıń ómirin
+        jaqsılaw hám qaraqalpaq ım-ishara -belgi tilin rawajlandırıw jolında zárúrli qádem tasladıq.
+    </string>
+    <string name="start">Baslaw</string>
 </resources>
