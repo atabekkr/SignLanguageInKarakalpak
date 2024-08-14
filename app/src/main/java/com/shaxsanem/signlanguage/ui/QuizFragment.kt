@@ -28,7 +28,7 @@ class QuizFragment : Fragment(R.layout.fragment_quiz) {
 
         binding.cardBySign.setOnClickListener {
             findNavController().navigate(
-                QuizFragmentDirections.actionQuizFragmentToQuizBySignFragment()
+                QuizFragmentDirections.actionQuizFragmentToQuizBySignFragment(navArgs.groupName)
             )
         }
         binding.cardWrongRight.setOnClickListener {

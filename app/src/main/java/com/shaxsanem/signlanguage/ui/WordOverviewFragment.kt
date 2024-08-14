@@ -14,6 +14,7 @@ import com.shaxsanem.signlanguage.R
 import com.shaxsanem.signlanguage.data.db.SLDao
 import com.shaxsanem.signlanguage.data.models.Word
 import com.shaxsanem.signlanguage.databinding.FragmentWordOverviewBinding
+import com.shaxsanem.signlanguage.utils.Constants.ALPHABET_PHOTO
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -37,7 +38,14 @@ class WordOverviewFragment : Fragment(R.layout.fragment_word_overview) {
 
         loadData()
         setupListeners()
-        playVideo()
+
+        if (navArgs.groupName != ALPHABET_PHOTO) {
+            playVideo()
+        } else {
+            binding.imageView.visibility = View.VISIBLE
+            binding.textureView.visibility = View.GONE
+            showImage(navArgs.content)
+        }
 
     }
 
@@ -82,6 +90,11 @@ class WordOverviewFragment : Fragment(R.layout.fragment_word_overview) {
             it.isLooping = true
         }
         binding.textureView.start()
+    }
+
+    private fun showImage(content: String) {
+        val resId = resources.getIdentifier(content, "drawable", requireContext().packageName)
+        binding.imageView.setImageResource(resId)
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

@@ -13,6 +13,13 @@ import com.shaxsanem.signlanguage.R
 import com.shaxsanem.signlanguage.data.db.SLDao
 import com.shaxsanem.signlanguage.databinding.FragmentTopicBinding
 import com.shaxsanem.signlanguage.ui.adapters.WordAdapter
+import com.shaxsanem.signlanguage.utils.Constants.ALPHABET
+import com.shaxsanem.signlanguage.utils.Constants.ALPHABET_PHOTO
+import com.shaxsanem.signlanguage.utils.Constants.CONFIG
+import com.shaxsanem.signlanguage.utils.Constants.FAMILY
+import com.shaxsanem.signlanguage.utils.Constants.HUMAN
+import com.shaxsanem.signlanguage.utils.Constants.INTRO
+import com.shaxsanem.signlanguage.utils.Constants.NUMBER
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -41,32 +48,39 @@ class TopicFragment : Fragment(R.layout.fragment_topic) {
         binding.recyclerView.adapter = adapter
 
         when (navArgs.groupName) {
-            "alphabet" -> {
+            ALPHABET -> {
                 binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_alphabet2))
+                binding.tvTitle.text = getString(R.string.alphabet_gif)
             }
 
-            "alphabetPhoto" -> {
+            ALPHABET_PHOTO -> {
                 binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_alphabet))
+                binding.tvTitle.text = getString(R.string.alphabet_photo)
             }
 
-            "intro" -> {
+            INTRO -> {
                 binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_introduce))
+                binding.tvTitle.text = getString(R.string.introducing)
             }
 
-            "human" -> {
+            HUMAN -> {
                 binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_human2))
+                binding.tvTitle.text = getString(R.string.human)
             }
 
-            "number" -> {
+            NUMBER -> {
                 binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_numbers))
+                binding.tvTitle.text = getString(R.string.digits)
             }
 
-            "config" -> {
+            CONFIG -> {
                 binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_config))
+                binding.tvTitle.text = getString(R.string.config)
             }
 
-            "family" -> {
+            FAMILY -> {
                 binding.ivTitle.setImageDrawable(requireContext().getDrawable(R.drawable.pic_family))
+                binding.tvTitle.text = getString(R.string.family)
             }
         }
 
@@ -75,7 +89,7 @@ class TopicFragment : Fragment(R.layout.fragment_topic) {
     private fun loadData() {
 
         lifecycleScope.launch {
-            adapter.submitList(dao.getWords())
+            adapter.submitList(dao.getWordsByGroupName(navArgs.groupName))
         }
 
     }
@@ -107,9 +121,9 @@ class TopicFragment : Fragment(R.layout.fragment_topic) {
             binding.etSearch.text.clear()
         }
 
-        adapter.setOnItemClickListener { content: String ->
+        adapter.setOnItemClickListener { content, groupName ->
             findNavController().navigate(
-                TopicFragmentDirections.actionTopicFragmentToWordOverviewFragment(content)
+                TopicFragmentDirections.actionTopicFragmentToWordOverviewFragment(content, groupName)
             )
         }
 

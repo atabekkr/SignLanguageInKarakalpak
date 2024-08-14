@@ -79,7 +79,14 @@
                 android:id="@+id/video_view"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
-                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/small_75" />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                tools:src="@drawable/photo_a"
                 android:layout_margin="@dimen/small_75" />
 
         </LinearLayout>

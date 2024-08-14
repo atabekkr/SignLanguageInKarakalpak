@@ -32,14 +32,15 @@
                     android:src="@drawable/ic_back" />
 
                 <TextView
+                    android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/normal_100"
                     android:fontFamily="@font/font_mont_semi_bold"
-                    android:text="Alphabet"
                     android:textColor="@color/typography_primary"
-                    android:textSize="@dimen/medium_size_text" />
+                    android:textSize="@dimen/medium_size_text"
+                    tools:text="Alphabet" />
 
             </LinearLayout>
 
@@ -79,7 +80,7 @@
                     android:drawableEnd="@drawable/ic_next"
                     android:fontFamily="@font/font_mont_medium"
                     android:padding="@dimen/small_150"
-                    android:text="Пройти викторину"
+                    android:text="@string/start_quiz"
                     android:textAllCaps="false"
                     android:textColor="@color/typography_primary"
                     android:textSize="@dimen/normal_text_100"
@@ -113,11 +114,11 @@
                 android:id="@+id/btn_clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"
-                android:background="@drawable/btn_ripple_effect"
-                android:layout_marginEnd="@dimen/normal_100"
                 android:layout_gravity="end|center_vertical"
-                android:src="@drawable/ic_clear" />
+                android:layout_marginEnd="@dimen/normal_100"
+                android:background="@drawable/btn_ripple_effect"
+                android:src="@drawable/ic_clear"
+                android:visibility="invisible" />
 
         </FrameLayout>
 

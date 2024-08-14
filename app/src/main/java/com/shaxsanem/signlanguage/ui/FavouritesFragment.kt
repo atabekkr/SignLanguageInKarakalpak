@@ -34,9 +34,9 @@ class FavouritesFragment : Fragment(R.layout.fragment_favourites) {
             adapter.submitList(dao.getFavourites())
         }
 
-        adapter.setOnItemClickListener { content ->
+        adapter.setOnItemClickListener { content, groupName ->
             findNavController().navigate(
-                FavouritesFragmentDirections.actionFavouritesFragmentToWordOverviewFragment(content)
+                FavouritesFragmentDirections.actionFavouritesFragmentToWordOverviewFragment(content, groupName)
             )
         }
 

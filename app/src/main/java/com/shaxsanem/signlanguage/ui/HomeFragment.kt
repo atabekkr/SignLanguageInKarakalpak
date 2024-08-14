@@ -7,6 +7,13 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.shaxsanem.signlanguage.R
 import com.shaxsanem.signlanguage.databinding.FragmentHomeBinding
+import com.shaxsanem.signlanguage.utils.Constants.ALPHABET
+import com.shaxsanem.signlanguage.utils.Constants.ALPHABET_PHOTO
+import com.shaxsanem.signlanguage.utils.Constants.CONFIG
+import com.shaxsanem.signlanguage.utils.Constants.FAMILY
+import com.shaxsanem.signlanguage.utils.Constants.HUMAN
+import com.shaxsanem.signlanguage.utils.Constants.INTRO
+import com.shaxsanem.signlanguage.utils.Constants.NUMBER
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,41 +30,43 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun setupListeners() {
 
-        binding.ivInfo.setOnClickListener { }
+        binding.ivInfo.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_aboutUsFragment)
+        }
 
         binding.cardAlphabet.setOnClickListener {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToTopicFragment("alphabet")
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment(ALPHABET)
             )
         }
         binding.cardAlphabetPhoto.setOnClickListener {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToTopicFragment("alphabetPhoto")
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment(ALPHABET_PHOTO)
             )
         }
         binding.cardIntroducing.setOnClickListener {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToTopicFragment("intro")
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment(INTRO)
             )
         }
         binding.cardHuman.setOnClickListener {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToTopicFragment("human")
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment(HUMAN)
             )
         }
         binding.cardNumber.setOnClickListener {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToTopicFragment("number")
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment(NUMBER)
             )
         }
         binding.cardConfig.setOnClickListener {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToTopicFragment("config")
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment(CONFIG)
             )
         }
         binding.cardFamily.setOnClickListener {
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToTopicFragment("family")
+                HomeFragmentDirections.actionHomeFragmentToTopicFragment(FAMILY)
             )
         }
 

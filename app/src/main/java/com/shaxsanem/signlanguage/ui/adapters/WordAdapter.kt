@@ -20,7 +20,7 @@ class WordAdapter : ListAdapter<Word, WordAdapter.WordViewHolder>(MyDiffUtil()) 
             binding.tvTitle.text = item.name
 
             binding.root.setOnClickListener {
-                onClick.invoke(item.content)
+                onClick.invoke(item.content, item.groupName)
             }
         }
     }
@@ -39,8 +39,8 @@ class WordAdapter : ListAdapter<Word, WordAdapter.WordViewHolder>(MyDiffUtil()) 
         holder.bind()
     }
 
-    private var onClick: (content: String) -> Unit = {}
-    fun setOnItemClickListener(onClick: (content: String) -> Unit) {
+    private var onClick: (content: String, groupName: String) -> Unit = {_, _ ->}
+    fun setOnItemClickListener(onClick: (content: String, groupName: String) -> Unit) {
         this.onClick = onClick
     }
 

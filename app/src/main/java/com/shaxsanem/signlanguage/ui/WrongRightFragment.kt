@@ -13,6 +13,7 @@ import com.shaxsanem.signlanguage.R
 import com.shaxsanem.signlanguage.data.db.SLDao
 import com.shaxsanem.signlanguage.data.models.Word
 import com.shaxsanem.signlanguage.databinding.FragmentWrongRightBinding
+import com.shaxsanem.signlanguage.utils.Constants.ALPHABET_PHOTO
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -54,13 +55,13 @@ class WrongRightFragment : Fragment(R.layout.fragment_wrong_right) {
         binding.ivCancel.setOnClickListener { findNavController().popBackStack() }
 
         binding.btnTrue.setOnClickListener {
-            if (currentWord.toString() == binding.tvName.text) {
+            if (currentWord?.name.toString() == binding.tvName.text) {
                 result++
             }
             checkingProgress()
         }
         binding.btnFalse.setOnClickListener {
-            if (currentWord.toString() != binding.tvName.text) {
+            if (currentWord?.name.toString() != binding.tvName.text) {
                 result++
             }
             checkingProgress()
@@ -88,7 +89,15 @@ class WrongRightFragment : Fragment(R.layout.fragment_wrong_right) {
         val shuffleWords =
             listOf(words.random().name, words.random().name, currentWord?.name).shuffled()
         binding.tvName.text = shuffleWords[0]
-        currentWord?.content?.let { playVideo(it) }
+        currentWord?.content?.let {
+            if (navArgs.groupName != ALPHABET_PHOTO) {
+                playVideo(it)
+            } else {
+                binding.imageView.visibility = View.VISIBLE
+                binding.videoView.visibility = View.GONE
+                showImage(it)
+            }
+        }
 
     }
 
@@ -111,4 +120,10 @@ class WrongRightFragment : Fragment(R.layout.fragment_wrong_right) {
         binding.videoView.isSoundEffectsEnabled = false
         binding.videoView.start()
     }
+
+    private fun showImage(content: String) {
+        val resId = resources.getIdentifier(content, "drawable", requireContext().packageName)
+        binding.imageView.setImageResource(resId)
+    }
+
 }

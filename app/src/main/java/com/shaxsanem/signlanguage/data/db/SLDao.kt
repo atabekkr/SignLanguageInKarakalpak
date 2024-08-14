@@ -8,10 +8,7 @@ import com.shaxsanem.signlanguage.data.models.Word
 @Dao
 interface SLDao {
 
-    @Query("Select * from words")
-    suspend fun getWords(): List<Word>
-
-    @Query("Select * from words where group_name like :groupName limit 5")
+    @Query("Select * from words where group_name like :groupName")
     suspend fun getWordsByGroupName(groupName: String): List<Word>
 
     @Query("Select * from words where name like :name and group_name like :groupName")

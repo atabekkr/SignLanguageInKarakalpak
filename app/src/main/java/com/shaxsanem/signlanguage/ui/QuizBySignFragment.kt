@@ -3,7 +3,6 @@ package com.shaxsanem.signlanguage.ui
 import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.MediaController
@@ -11,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.shaxsanem.signlanguage.R
@@ -18,6 +18,7 @@ import com.shaxsanem.signlanguage.data.db.SLDao
 import com.shaxsanem.signlanguage.data.models.Word
 import com.shaxsanem.signlanguage.databinding.BottomSheetResultBinding
 import com.shaxsanem.signlanguage.databinding.FragmentQuizBySignBinding
+import com.shaxsanem.signlanguage.utils.Constants.ALPHABET_PHOTO
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -26,6 +27,7 @@ import javax.inject.Inject
 class QuizBySignFragment : Fragment(R.layout.fragment_quiz_by_sign) {
 
     private val binding by viewBinding(FragmentQuizBySignBinding::bind)
+    private val navArgs by navArgs<QuizBySignFragmentArgs>()
 
     @Inject
     lateinit var dao: SLDao
@@ -51,7 +53,7 @@ class QuizBySignFragment : Fragment(R.layout.fragment_quiz_by_sign) {
         super.onViewCreated(view, savedInstanceState)
 
         lifecycleScope.launch {
-            words = dao.getWordsByGroupName("number")
+            words = dao.getWordsByGroupName(navArgs.groupName)
 
             binding.progressBar.max = words.size
             setQuestions(currentAnswerId)
@@ -88,7 +90,13 @@ class QuizBySignFragment : Fragment(R.layout.fragment_quiz_by_sign) {
 
         word = words[testId]
 
-        playVideo(word!!.content)
+        if (navArgs.groupName != ALPHABET_PHOTO) {
+            playVideo(word!!.content)
+        } else {
+            binding.imageView.visibility = View.VISIBLE
+            binding.videoView.visibility = View.GONE
+            showImage(word!!.content)
+        }
 
         listOfVariantButton = listOf(
             binding.btnVariant1,
@@ -221,6 +229,11 @@ class QuizBySignFragment : Fragment(R.layout.fragment_quiz_by_sign) {
             it.setVolume(0f, 0f)
         }
         binding.videoView.start()
+    }
+
+    private fun showImage(content: String) {
+        val resId = resources.getIdentifier(content, "drawable", requireContext().packageName)
+        binding.imageView.setImageResource(resId)
     }
 
     override fun onDestroyView() {

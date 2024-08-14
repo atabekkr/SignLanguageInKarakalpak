@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/typography_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_toolbar"
+            android:paddingHorizontal="@dimen/small_125">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/standard_icon_width_height"
+                android:layout_height="@dimen/standard_icon_width_height"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_ripple_effect"
+                android:padding="@dimen/small_125"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/normal_100"
+                android:fontFamily="@font/font_mont_semi_bold"
+                android:text="@string/aboutus"
+                android:textColor="@color/typography_primary"
+                android:textSize="@dimen/medium_size_text" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/toolbar_shadow" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/normal_100"
+        android:fontFamily="@font/font_mont_medium"
+        android:text="@string/about_us_text"
+        android:textSize="@dimen/normal_text_100" />
+</LinearLayout>
